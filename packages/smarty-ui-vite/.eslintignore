@@ -8,3 +8,4 @@ coverage
 *.ttf
 index.html
 dist
+*.html
