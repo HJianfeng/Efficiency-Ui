@@ -1,12 +1,12 @@
 import { App } from 'vue';
-import SuButton from './button';
+import SButton from './button';
 
 // 导出单独组件
-export { SuButton };
+export { SButton };
 
 // 编写一个插件，实现一个install方法
 export default {
   install(app: App): void {
-    app.component(SuButton.name, SuButton);
+    app.component(SButton.name, SButton);
   }
 };
