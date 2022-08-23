@@ -58,7 +58,6 @@ export default defineComponent({
         text-${size[props.size].text}
         hover:text-white
         transition duration-300 ease-in-out transform hover:scale-105
-        mx-1
       `}
       >
         {props.icon !== '' ? (
