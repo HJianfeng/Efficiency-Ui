@@ -1,12 +1,12 @@
 import { App } from 'vue';
-import EFButton from './button';
+import { Button } from './Button';
 
 // 导出单独组件
-export { EFButton };
+export { Button };
 
 // 编写一个插件，实现一个install方法
 export default {
   install(app: App): void {
-    app.component(EFButton.name, EFButton);
+    app.component(Button.name, Button);
   }
 };
