@@ -4,9 +4,12 @@ importers:
 
   .:
     specifiers:
+      husky: ^8.0.1
       vite: 3.0.7
     dependencies:
       vite: 3.0.7
+    devDependencies:
+      husky: 8.0.1
 
   packages/docs-vite:
     specifiers:
@@ -42,7 +45,6 @@ importers:
       vitest: 0.21.1
       vue: 3.2.37
     dependencies:
-      typescript: 4.7.4
       vue: 3.2.37
     devDependencies:
       '@iconify-json/ic': 1.1.4
@@ -61,6 +63,7 @@ importers:
       happy-dom: 6.0.4
       prettier: 2.7.1
       terser: 5.4.0
+      typescript: 4.7.4
       unocss: 0.45.6_vite@3.0.7
       vite: 3.0.7_terser@5.4.0
       vitepress: 0.22.4
@@ -2418,6 +2421,12 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /iconv-lite/0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -3404,6 +3413,7 @@ packages:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
 
   /uc.micro/1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
