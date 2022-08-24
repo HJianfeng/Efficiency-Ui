@@ -1,4 +1,4 @@
-import Theme from 'vitepress/dist/client/theme-default'
+import Theme from 'vitepress/dist/client/theme-default/index.js'
 import SmartyUI from '../../../src/entry';
 // 主题样式
 import 'vitepress-theme-demoblock/theme/styles/index.css'
@@ -10,7 +10,7 @@ export default {
   ...Theme,
   enhanceApp({ app }) {
     app.use(SmartyUI)
-    // app.component('Demo', Demo)
-    // app.component('DemoBlock', DemoBlock)
+    app.component('Demo', Demo)
+    app.component('DemoBlock', DemoBlock)
   },
 }

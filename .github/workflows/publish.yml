@@ -21,7 +21,7 @@ jobs:
       - name: Install modules
         run: pnpm install
       - name: Build 
-        run: cd packages/smarty-ui-vite && npm run build 
+        run: cd packages/efficiency-ui && npm run build 
       - name: 'Publish to the npm registry'
         uses: primer/publish@3.0.0
         env:
@@ -29,4 +29,4 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
         with:
           default_branch: 'publish'
-          dir: "packages/smarty-ui-vite"
+          dir: "packages/efficiency-ui"

@@ -10,7 +10,8 @@ const rollupOptions = {
   output: {
     globals: {
       vue: 'Vue'
-    }
+    },
+    assetFileNames: `style.[ext]`
   }
 };
 
