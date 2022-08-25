@@ -3,7 +3,7 @@
 <a href="https://www.npmjs.com/package/efficiency-ui"><img src="https://img.shields.io/npm/v/efficiency-ui" alt="NPM version"></a>
 </p>
 
-[![CI](https://github.com/HJianfeng/Smarty-Ui/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/HJianfeng/Smarty-Ui/actions/workflows/main.yml)  ![GitHub](https://img.shields.io/github/license/HJianfeng/efficiency-ui?color=red)
+[![CI](https://github.com/HJianfeng/Smarty-Ui/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/HJianfeng/Smarty-Ui/actions/workflows/main.yml)  ![GitHub](https://img.shields.io/github/license/HJianfeng/efficiency-ui?color=red) [![codecov](https://codecov.io/gh/HJianfeng/Efficiency-Ui/branch/main/graph/badge.svg?token=08R9NHYG4H)](https://codecov.io/gh/HJianfeng/Efficiency-Ui)
 
 ## Features
 
