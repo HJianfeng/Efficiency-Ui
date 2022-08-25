@@ -25,8 +25,8 @@ export const config: any = {
     cssCodeSplit: true,
     lib: {
       entry: './src/entry.ts',
-      name: 'SmartyUI',
-      fileName: 'smarty-ui',
+      name: 'EfficiencyUI',
+      fileName: 'efficiency-ui',
       // 导出模块格式
       formats: ['esm', 'umd', 'iife']
     },

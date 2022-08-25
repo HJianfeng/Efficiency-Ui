@@ -2,7 +2,7 @@
 常用操作按钮
 
 ## 基础用法
-
+v0.1.2  
 基础的函数用法
 
 :::demo 使用`size`、`color`、`pain`、`round`属性来定义 Button 的样式。
