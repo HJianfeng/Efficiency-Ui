@@ -10,13 +10,12 @@
 
 <body>
 
-<h1>🔨 SmartyUI Demo</h1>
+<h1>Demo</h1>
 <div id="app"></div>
 <script type="module">
-    import style from "efficiency-ui/dist/assets/entry.css"
     import { createApp } from "vue/dist/vue.esm-bundler.js";
-    import SmartyUI, { EFButton } from "efficiency-ui/dist/smarty-ui.esm.js";
-
+    import { Button } from "efficiency-ui";
+    import "efficiency-ui/dist/style.css"
     createApp({
         template: `
     <div style="margin-bottom:20px;">
@@ -26,34 +25,7 @@
         <EFButton color="yellow">黄色按钮</EFButton>
         <EFButton color="red">红色按钮</EFButton>
     </div>
-    <div style="margin-bottom:20px;"
-    >
-        <EFButton color="blue" plain>朴素按钮</EFButton>
-        <EFButton color="green" plain>绿色按钮</EFButton>
-        <EFButton color="gray" plain>灰色按钮</EFButton>
-        <EFButton color="yellow" plain>黄色按钮</EFButton>
-        <EFButton color="red" plain>红色按钮</EFButton>
-    </div>
-    <div style="margin-bottom:20px;">
-        <EFButton size="small" plain>小按钮</EFButton>
-        <EFButton size="medium" plain>中按钮</EFButton>
-        <EFButton size="large" plain>大按钮</EFButton>
-    </div>
-    <div style="margin-bottom:20px;">
-        <EFButton color="blue" round plain icon="search">搜索按钮</EFButton>
-        <EFButton color="green" round plain icon="edit">编辑按钮</EFButton>
-        <EFButton color="gray" round plain icon="check">成功按钮</EFButton>
-        <EFButton color="yellow" round plain icon="message">提示按钮</EFButton>
-        <EFButton color="red" round plain icon="delete">删除按钮</EFButton>
-    </div>
-    <div style="margin-bottom:20px;">
-        <EFButton color="blue" round plain icon="search"></EFButton>
-        <EFButton color="green" round plain icon="edit"></EFButton>
-        <EFButton color="gray" round plain icon="check"></EFButton>
-        <EFButton color="yellow" round plain icon="message"></EFButton>
-        <EFButton color="red" round plain icon="delete"></EFButton>
-    </div>
-`}).use(SmartyUI).mount('#app')
+`}).component(Button.name, Button).mount('#app')
 
 </script>
 </body>

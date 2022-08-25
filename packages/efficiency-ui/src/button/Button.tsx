@@ -46,6 +46,7 @@ export default defineComponent({
     return () => (
       <button
         class={`
+        ef-button
         py-${size[props.size].y}
         px-${size[props.size].x}
         ${props.round ? 'rounded-full' : 'rounded'}
@@ -57,8 +58,6 @@ export default defineComponent({
         text-${props.plain ? props.color + '-500' : 'white'}
         text-${size[props.size].text}
         hover:text-white
-        transition duration-300 ease-in-out transform hover:scale-105
-        mx-1
       `}
       >
         {props.icon !== '' ? (

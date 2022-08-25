@@ -22,6 +22,19 @@ npm i efficiency-ui
 ```
 
 ## Quick Start
+```js
+import Vue from 'vue';
+import EfficiencyUI from 'efficiency-ui';
+import 'efficiency-ui/dist/style.css';
+import App from './App.vue';
+
+Vue.use(EfficiencyUI);
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+```  
 浏览 [Getting Started.](https://efficiency-ui.vercel.app/)
 
 

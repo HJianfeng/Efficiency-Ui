@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "",
   "main": "index.js",
-  "module": "./dist/smarty-ui.esm.js",
+  "module": "./dist/efficiency-ui.esm.js",
   "homepage": "https://efficiency-ui.vercel.app/",
   "scripts": {
     "dev": "vite",

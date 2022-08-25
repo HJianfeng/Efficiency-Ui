@@ -1,11 +1,17 @@
 import { demoBlockPlugin } from 'vitepress-theme-demoblock';
 const sidebar = {
   '/': [
-    {text: '快速开始', link: '/'},
+    {
+      text: '开发指南',
+      children: [
+        {text: '安装', link: '/index'},
+        {text: '快速上手', link: '/start'},
+      ]
+    },
     {
       text: '通用',
       children: [
-        { text: 'Button 按钮', link: '/components/button/' },
+        { text: 'Button 按钮', link: '/components/button' },
       ]
     },
     { text: '导航' },
