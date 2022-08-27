@@ -28,24 +28,24 @@ describe('type', () => {
       wrapper
         .classes()
         .map((v) => v.replace('\n', ''))
-        .includes('ef-button--type-primary')
+        .includes('ef-button--type-info')
     ).toBe(true);
   });
 
-  test('info', () => {
+  test('primary', () => {
     const wrapper = shallowMount(Button, {
       slots: {
         default: 'Button'
       },
       props: {
-        type: 'info'
+        type: 'primary'
       }
     });
     expect(
       wrapper
         .classes()
         .map((v) => v.replace('\n', ''))
-        .includes('ef-button--type-info')
+        .includes('ef-button--type-primary')
     ).toBe(true);
   });
 });
