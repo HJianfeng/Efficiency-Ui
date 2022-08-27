@@ -1,0 +1,29 @@
+$types:('primary','danger','warning','success', 'info', 'text');
+@each $t in $types{
+  .ef-button--type-#{$t} {
+    @if($t == info) {
+      background-color: #fff;
+      color: #333;
+      border-color: #dcdcdc;
+      &:not(.ef-disabled):hover {
+        color: var(--color-hover-primary);
+        border-color: var(--color-hover-primary);
+      }
+    } @else if($t == text) {
+      background-color: transparent;
+      color: var(--color-primary);
+      border-color: transparent;
+      &:not(.ef-disabled):hover {
+        color: var(--color-hover-primary);
+      }
+    } @else {
+      background-color: var(--color-#{$t});
+      color: #fff;
+      border-color: var(--color-#{$t});
+      &:not(.ef-disabled):hover {
+        background-color: var(--color-hover-#{$t});
+        border-color: var(--color-hover-#{$t});
+      }
+    }
+  }
+}

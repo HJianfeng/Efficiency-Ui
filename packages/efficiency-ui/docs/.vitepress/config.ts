@@ -9,9 +9,13 @@ const sidebar = {
       ]
     },
     {
-      text: '通用',
+      text: '组件',
       children: [
-        { text: 'Button 按钮', link: '/components/button' },
+        {
+          text: '基础组件',children: [
+            { text: 'Button 按钮', link: '/components/button' },
+          ]
+        }
       ]
     },
     { text: '导航' },

@@ -16,7 +16,7 @@ describe('Button', () => {
     expect(wrapper.text()).toBe('Button');
   });
 });
-describe('color', () => {
+describe('type', () => {
   test('default', () => {
     const wrapper = shallowMount(Button, {
       slots: {
@@ -28,51 +28,36 @@ describe('color', () => {
       wrapper
         .classes()
         .map((v) => v.replace('\n', ''))
-        .includes('bg-blue-500')
+        .includes('ef-button--type-primary')
     ).toBe(true);
   });
 
-  test('red', () => {
+  test('info', () => {
     const wrapper = shallowMount(Button, {
       slots: {
         default: 'Button'
       },
       props: {
-        color: 'red'
+        type: 'info'
       }
     });
     expect(
       wrapper
         .classes()
         .map((v) => v.replace('\n', ''))
-        .includes('bg-red-500')
+        .includes('ef-button--type-info')
     ).toBe(true);
   });
 });
 
-describe('plain', () => {
+describe('disabled', () => {
   test('default', () => {
-    const wrapper = shallowMount(Button, {
-      slots: {
-        default: 'Button'
-      }
-    });
-
-    // 断言
-    expect(
-      wrapper
-        .classes()
-        .map((v) => v.replace('\n', ''))
-        .includes('bg-blue-500')
-    ).toBe(true);
-  });
-  test('plain:true', () => {
     const wrapper = shallowMount(Button, {
       slots: {
         default: 'Button'
       },
       props: {
-        plain: true
+        disabled: true
       }
     });
 
@@ -81,7 +66,7 @@ describe('plain', () => {
       wrapper
         .classes()
         .map((v) => v.replace('\n', ''))
-        .includes('bg-blue-100')
+        .includes('ef-disabled')
     ).toBe(true);
   });
 });

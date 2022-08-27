@@ -1,37 +1,7 @@
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
 
-const colors = [
-  'white',
-  'black',
-  'gray',
-  'red',
-  'yellow',
-  'green',
-  'blue',
-  'indigo',
-  'purple',
-  'pink',
-];
-const safelist = [
-  ...colors.map((v) => `bg-${v}-100`),
-  ...colors.map((v) => `bg-${v}-400`),
-  ...colors.map((v) => `bg-${v}-500`),
-  ...colors.map((v) => `hover:bg-${v}-100`),
-  ...colors.map((v) => `hover:bg-${v}-300`),
-  ...colors.map((v) => `hover:bg-${v}-400`),
-  ...colors.map((v) => `hover:bg-${v}-500`),
-  ...colors.map((v) => `border-${v}-400`),
-  ...colors.map((v) => `border-${v}-500`),
-  ...colors.map((v) => `text-${v}-500`),
-  ...colors.map((v) => `hover:text-${v}-500`),
-  'text-white',
-  ...Array.from({ length: 8 }, (_, i) => `px-${i + 1}`),
-  ...Array.from({ length: 8 }, (_, i) => `py-${i + 1}`),
-  ...Array.from({ length: 8 }, (_, i) => `px-${i + 0.5}`),
-  ...Array.from({ length: 8 }, (_, i) => `py-${i + 0.5}`),
-  ...['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl'].map((v) => `text-${v}`),
-  ...['rounded-full', 'rounded'],
+const icon = [
   ...[
     'search',
     'edit',
@@ -40,12 +10,20 @@ const safelist = [
     'star-off',
     'delete',
     'add',
-    'share',
-  ].map((v) => `i-ic-baseline-${v}`),
-]
-
+    'share'
+  ].map((v) => `i-ic-baseline-${v}`)
+];
+const safelist = [
+  ...Array.from({ length: 40 }, (_, i) => `h-${i + 20}px`),
+  ...Array.from({ length: 8 }, (_, i) => `px-${i + 1}`),
+  ...Array.from({ length: 8 }, (_, i) => `px-${i + 0.5}`),
+  ...Array.from({ length: 9 }, (_, i) => `opacity-${i}0`),
+  ...Array.from({ length: 20 }, (_, i) => `text-${i + 12}px`),
+  ...['rounded-full', 'rounded'],
+  ...icon
+];
 export default () =>
   Unocss({
     safelist,
-    presets: [presetUno(), presetAttributify(), presetIcons()],
+    presets: [presetUno(), presetAttributify(), presetIcons()]
   });

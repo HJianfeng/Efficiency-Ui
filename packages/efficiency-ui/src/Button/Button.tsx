@@ -1,71 +1,95 @@
 import { defineComponent, PropType } from 'vue';
+import '../style/index.scss';
 import 'uno.css';
+import './style/button.scss';
 
-type ISize = 'small' | 'medium' | 'large';
-type IColor =
-  | 'black'
-  | 'gray'
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
-const props = {
-  color: {
-    type: String as PropType<IColor>,
-    default: 'blue'
-  },
+export type ISize = 'small' | 'medium' | 'large';
+export type IType =
+  | 'primary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info'
+  | 'text';
+export const props = {
   size: {
     type: String as PropType<ISize>,
     default: 'medium'
   },
-  plain: {
-    type: Boolean,
-    default: false
+  type: {
+    type: String as PropType<IType>,
+    default: ''
+  },
+  icon: {
+    type: String,
+    default: ''
   },
   round: {
     type: Boolean,
     default: false
   },
-  icon: {
-    type: String,
-    default: ''
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 };
 export default defineComponent({
-  name: 'EFButton',
+  name: 'EfButton',
   props,
   setup(props, { slots }) {
     const size = {
-      small: { x: '2', y: '1', text: 'xs' },
-      medium: { x: '3', y: '1.5', text: 'sm' },
-      large: { x: '4', y: '2', text: 'base' }
+      small: { x: '2', h: '24px', text: '12px' },
+      medium: { x: '3', h: '32px', text: '14px' },
+      large: { x: '4', h: '40px', text: '16px' }
     };
+    const sizeItem = size[props.size] || size.medium;
+    const isDisabled = props.disabled || props.loading;
+    const bType = [
+      'primary',
+      'danger',
+      'warning',
+      'success',
+      'info',
+      'text'
+    ].includes(props.type)
+      ? props.type || 'info'
+      : 'info';
+    const buttonClass = [
+      `ef-button`,
+      `flex-inline`,
+      `items-center`,
+      `ef-button--type-${bType}`,
+      `h-${sizeItem.h}`,
+      `px-${sizeItem.x}`,
+      `text-${sizeItem.text}`,
+      `${props.round ? 'rounded-full' : 'rounded'}`,
+      !isDisabled ? 'cursor-pointer' : 'cursor-not-allowed',
+      isDisabled ? `ef-disabled opacity-60` : '',
+      `border-1`
+    ];
     return () => (
-      <button
-        class={`
-        ef-button
-        py-${size[props.size].y}
-        px-${size[props.size].x}
-        ${props.round ? 'rounded-full' : 'rounded'}
-        bg-${props.color}-${props.plain ? '100' : '500'}
-        hover:bg-${props.color}-400
-        border-${props.color}-${props.plain ? '500' : '500'}
-        cursor-pointer
-        border-1
-        text-${props.plain ? props.color + '-500' : 'white'}
-        text-${size[props.size].text}
-        hover:text-white
-      `}
-      >
-        {props.icon !== '' ? (
-          <i class={`i-ic-baseline-${props.icon} p-2`}></i>
-        ) : (
-          ''
-        )}
-        {slots.default ? slots.default() : ''}
+      <button class={buttonClass} disabled={isDisabled} onClick={props.onClick}>
+        <div class="ef-button-inner">
+          {props.loading ? (
+            <i class={`i-line-md-loading-loop p-2 mr-1`}></i>
+          ) : (
+            ''
+          )}
+          {props.icon !== '' ? (
+            <i
+              class={`i-ic-baseline-${props.icon} p-2 ${
+                slots.default ? 'mr-1' : ''
+              }`}
+            ></i>
+          ) : (
+            ''
+          )}
+          {slots.default ? slots.default() : ''}
+        </div>
       </button>
     );
   }

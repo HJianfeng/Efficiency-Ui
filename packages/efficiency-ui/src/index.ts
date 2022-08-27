@@ -3,13 +3,21 @@ import SmartyUI from './entry';
 createApp({
   template: `
     <div style="margin-bottom:20px;">
-       <EFButton color="blue">主要按钮</EFButton>
-       <EFButton color="green">绿色按钮</EFButton>
-       <EFButton color="gray">灰色按钮</EFButton>
-       <EFButton color="yellow">黄色按钮</EFButton>
-       <EFButton color="red">红色按钮</EFButton>
+       <ef-button >确定</ef-button>
+       <ef-button type="primary" icon="search" plain>确定</ef-button>
+       <ef-button type="success" icon="search" plain>确定</ef-button>
+       <ef-button type="info"  icon="search" @click="handelClick" disabled>确定点击</ef-button>
+       <ef-button type="danger" size="large">确定</ef-button>
+       <ef-button type="warning" disabled size="small">确定</ef-button>
+       <ef-button type="warning" disabled size="small" round>确定</ef-button>
+       <ef-button type="text" icon="search" disabled>确定</ef-button>
    </div>
-       `
+   `,
+  methods: {
+    handelClick(e) {
+      console.log('button click:', e);
+    }
+  }
 })
   .use(SmartyUI)
   .mount('#app');
