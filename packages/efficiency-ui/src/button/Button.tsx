@@ -1,7 +1,7 @@
 import { defineComponent, PropType } from 'vue';
 import '../style/index.scss';
 import 'uno.css';
-import './style/button.scss';
+import '../style/button.scss';
 
 export type ISize = 'small' | 'medium' | 'large';
 export type IType =
