@@ -1,0 +1,53 @@
+.ef-row {
+  position: relative;
+  box-sizing: border-box;
+}
+.ef-col {
+  box-sizing: border-box;
+}
+[class*=ef-col-].is-guttered {
+  display: block;
+  min-height: 1px;
+}
+
+@for $i from 1 to 24 {
+  .ef-col-#{$i} {
+    max-width: ($i/24)*100%;
+    flex: 0 0 ($i/24)*100%;
+  }
+  .ef-col-offset-#{$i} {
+    margin-left: ($i/24)*100%;
+  }
+  .ef-col-push-#{$i} {
+    position: relative;
+    left: ($i/24)*100%;
+  }
+  .ef-col-pull-#{$i} {
+    position: relative;
+    right: ($i/24)*100%;
+  }
+}
+
+$sizes: (xs: 'max-width: 768px', sm: 'min-width: 768px', md: 'min-width: 992px', lg: 'min-width:1200px', xl: 'min-width:1920px');
+@each $label, $width in $sizes{
+  @media only screen and ($width) {
+    @for $i from 1 to 24 {
+      .ef-col-#{$label}-#{$i} {
+        display: block;
+        max-width: ($i/24)*100%;
+        flex: 0 0 ($i/24)*100%;
+      }
+      .ef-col-#{$label}-offset-#{$i} {
+        margin-left: ($i/24)*100%;
+      }
+      .ef-col-#{$label}-push-#{$i} {
+        position: relative;
+        left: ($i/24)*100%;
+      }
+      .ef-col-#{$label}-pull-#{$i} {
+        position: relative;
+        right: ($i/24)*100%;
+      }
+    }
+  }
+}

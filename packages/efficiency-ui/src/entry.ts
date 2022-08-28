@@ -1,12 +1,16 @@
 import { App } from 'vue';
-import { Button } from './Button';
+import { Button } from './components/Button';
+import { Row } from './components/Row';
+import { Col } from './components/Col';
 
+const componentList = [Button, Row, Col];
 // 导出单独组件
-export { Button };
-
+export { Button, Row, Col };
 // 编写一个插件，实现一个install方法
 export default {
   install(app: App): void {
-    app.component(Button.name, Button);
+    componentList.forEach((com) => {
+      app.component(com.name, com);
+    });
   }
 };

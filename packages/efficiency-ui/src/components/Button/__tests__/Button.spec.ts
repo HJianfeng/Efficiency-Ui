@@ -124,3 +124,59 @@ describe('round', () => {
     ).toBe(true);
   });
 });
+describe('size', () => {
+  test('default', () => {
+    const wrapper = shallowMount(Button, {
+      slots: {
+        default: 'Button'
+      }
+    });
+
+    // 断言
+    expect(
+      wrapper
+        .classes()
+        .map((v) => v.replace('\n', ''))
+        .includes('ef-button-size--medium')
+    ).toBe(true);
+  });
+  test('large', () => {
+    const wrapper = shallowMount(Button, {
+      slots: {
+        default: 'Button'
+      },
+      props: {
+        size: 'large'
+      }
+    });
+
+    // 断言
+    expect(
+      wrapper
+        .classes()
+        .map((v) => v.replace('\n', ''))
+        .includes('ef-button-size--large')
+    ).toBe(true);
+  });
+});
+describe('loading', () => {
+  test('loading:true', () => {
+    const wrapper = shallowMount(Button, {
+      slots: {
+        default: 'Button'
+      },
+      props: {
+        loading: true
+      }
+    });
+
+    // 断言
+    expect(
+      wrapper
+        .find('i')
+        .classes()
+        .map((v) => v.replace('\n', ''))
+        .includes('i-line-md-loading-loop')
+    ).toBe(true);
+  });
+});

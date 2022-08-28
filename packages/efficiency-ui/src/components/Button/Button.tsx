@@ -1,7 +1,7 @@
 import { defineComponent, PropType } from 'vue';
-import '../style/index.scss';
+import '@/style/index.scss';
+import '@/style/button.scss';
 import 'uno.css';
-import '../style/button.scss';
 
 export type ISize = 'small' | 'medium' | 'large';
 export type IType =
@@ -42,9 +42,9 @@ export default defineComponent({
   props,
   setup(props, { slots }) {
     const size = {
-      small: { x: '2', h: '24px', text: '12px' },
-      medium: { x: '3', h: '32px', text: '14px' },
-      large: { x: '4', h: '40px', text: '16px' }
+      small: { x: '2', h: '24px', text: '12px', name: 'small' },
+      medium: { x: '3', h: '32px', text: '14px', name: 'medium' },
+      large: { x: '4', h: '40px', text: '16px', name: 'large' }
     };
     const sizeItem = size[props.size] || size.medium;
     const isDisabled = props.disabled || props.loading;
@@ -65,6 +65,7 @@ export default defineComponent({
       `ef-button--type-${bType}`,
       `h-${sizeItem.h}`,
       `px-${sizeItem.x}`,
+      `ef-button-size--${sizeItem.name}`,
       `text-${sizeItem.text}`,
       `${props.round ? 'rounded-full' : 'rounded'}`,
       !isDisabled ? 'cursor-pointer' : 'cursor-not-allowed',

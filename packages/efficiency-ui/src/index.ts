@@ -1,17 +1,38 @@
-import { createApp } from 'vue/dist/vue.esm-browser';
-import SmartyUI from './entry';
+import { createApp } from 'vue/dist/vue.cjs';
+import EfficiencyUI from './entry';
+import './style/demo.scss';
 createApp({
   template: `
-    <div style="margin-bottom:20px;">
-       <ef-button >确定</ef-button>
-       <ef-button type="primary" icon="search" plain>确定</ef-button>
-       <ef-button type="success" icon="search" plain>确定</ef-button>
-       <ef-button type="info"  icon="search" @click="handelClick" disabled>确定点击</ef-button>
-       <ef-button type="danger" size="large">确定</ef-button>
-       <ef-button type="warning" disabled size="small">确定</ef-button>
-       <ef-button type="warning" disabled size="small" round>确定</ef-button>
-       <ef-button type="text" icon="search" disabled>确定</ef-button>
-   </div>
+    <ef-row justify="start" align="center" :gutter="10">
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
+   <ef-row justify="start" :gutter="10">
+   <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   <ef-col :span="6" :pull="2"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
+   <ef-row justify="end" :gutter="10">
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
+   <ef-row justify="around" :gutter="10">
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
+   <ef-row justify="between" :gutter="10">
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
+   <ef-row justify="evenly" :gutter="10">
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
+   </ef-row>
    `,
   methods: {
     handelClick(e) {
@@ -19,5 +40,5 @@ createApp({
     }
   }
 })
-  .use(SmartyUI)
+  .use(EfficiencyUI)
   .mount('#app');

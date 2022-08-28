@@ -51,11 +51,10 @@ importers:
       typescript: ^4.7.4
       unocss: 0.44.5
       vite: 3.0.7
+      vite-plugin-vue-setup-extend: ^0.4.0
       vitepress: 0.22.4
       vitepress-theme-demoblock: 1.4.2
       vitest: 0.21.1
-      vue: 3.2.37
-    dependencies:
       vue: 3.2.37
     devDependencies:
       '@iconify-json/ic': 1.1.4
@@ -84,9 +83,11 @@ importers:
       typescript: 4.7.4
       unocss: 0.44.5_vite@3.0.7
       vite: 3.0.7_sass@1.54.5+terser@5.4.0
+      vite-plugin-vue-setup-extend: 0.4.0_vite@3.0.7
       vitepress: 0.22.4_sass@1.54.5
       vitepress-theme-demoblock: 1.4.2_sass@1.54.5
       vitest: 0.21.1_qcxcd5pak4mwqv7vytetbz54ji
+      vue: 3.2.37
 
 packages:
 
@@ -4636,6 +4637,16 @@ packages:
   /vary/1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+    dev: true
+
+  /vite-plugin-vue-setup-extend/0.4.0_vite@3.0.7:
+    resolution: {integrity: sha512-WMbjPCui75fboFoUTHhdbXzu4Y/bJMv5N9QT9a7do3wNMNHHqrk+Tn2jrSJU0LS5fGl/EG+FEDBYVUeWIkDqXQ==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      '@vue/compiler-sfc': 3.2.37
+      magic-string: 0.25.9
+      vite: 3.0.7_sass@1.54.5+terser@5.4.0
     dev: true
 
   /vite/2.9.15_sass@1.54.5:

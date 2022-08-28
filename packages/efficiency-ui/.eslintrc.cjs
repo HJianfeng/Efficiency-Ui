@@ -33,6 +33,7 @@ module.exports = {
         singleQuote: true,
         trailingComma: 'none'
       }
-    ]
+    ],
+    'vue/multi-word-component-names': 0
   }
 };

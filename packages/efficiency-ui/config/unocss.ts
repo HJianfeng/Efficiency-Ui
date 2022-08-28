@@ -14,6 +14,11 @@ const icon = [
   ].map((v) => `i-ic-baseline-${v}`)
 ];
 const safelist = [
+  ...['start', 'center', 'end', 'around', 'between', 'evenly'].map(
+    (i) => `justify-${i}`
+  ),
+  'bg-purple',
+  ...['start', 'center', 'end'].map((i) => `items-${i}`),
   ...Array.from({ length: 40 }, (_, i) => `h-${i + 20}px`),
   ...Array.from({ length: 8 }, (_, i) => `px-${i + 1}`),
   ...Array.from({ length: 8 }, (_, i) => `px-${i + 0.5}`),
