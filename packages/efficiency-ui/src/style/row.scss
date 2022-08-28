@@ -12,7 +12,7 @@
   min-height: 1px;
 }
 
-@for $i from 1 to 24 {
+@for $i from 1 to 25 {
   .ef-col-#{$i} {
     max-width: math.div($i, 24)*100%;
     flex: 0 0 math.div($i, 24)*100%;
@@ -33,7 +33,7 @@
 $sizes: (xs: 'max-width: 768px', sm: 'min-width: 768px', md: 'min-width: 992px', lg: 'min-width:1200px', xl: 'min-width:1920px');
 @each $label, $width in $sizes{
   @media only screen and ($width) {
-    @for $i from 1 to 24 {
+    @for $i from 1 to 25 {
       .ef-col-#{$label}-#{$i} {
         display: block;
         max-width: math.div($i, 24)*100%;
