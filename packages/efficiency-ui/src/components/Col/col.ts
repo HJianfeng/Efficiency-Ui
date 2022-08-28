@@ -37,8 +37,8 @@ export const colProps = {
     default: 0
   },
   xs: {
-    type: Number as PropType<ColSize>,
-    default: ''
+    type: definePropType<ColSize>([Number, Object]),
+    default: () => mutable({} as const)
   },
   sm: {
     type: definePropType<ColSize>([Number, Object]),

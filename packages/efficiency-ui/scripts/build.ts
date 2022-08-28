@@ -10,7 +10,7 @@ const buildAll = async () => {
   await build(defineConfig(config as UserConfig) as InlineConfig);
   // await build(defineConfig({}))
 
-  const srcDir = path.resolve(__dirname, '../src/');
+  const srcDir = path.resolve(__dirname, '../src/components');
   fs.readdirSync(srcDir)
     .filter((name) => {
       // 只要目录不要文件，且里面包含index.ts
@@ -29,9 +29,9 @@ const buildAll = async () => {
         },
         outDir
       };
-
-      Object.assign(config.build, custom);
-      await build(defineConfig(config as UserConfig) as InlineConfig);
+      const cloneConfig = JSON.parse(JSON.stringify(config));
+      Object.assign(cloneConfig.build, custom);
+      await build(defineConfig(cloneConfig as UserConfig) as InlineConfig);
 
       fs.outputFile(
         path.resolve(outDir, `package.json`),
