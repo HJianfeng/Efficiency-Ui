@@ -1,14 +1,28 @@
-.ef-row {
-  margin-bottom: 20px;
-}
-.ef-row:last-child {
-  margin-bottom: 0;
-}
-.ef-col {
+.scrollbar-demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin: 10px;
+  text-align: center;
   border-radius: 4px;
+  background: #ecf5ff;
+  color: #409eff;
 }
 
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+.scrollbar-flex-content {
+  display: flex;
+  .scrollbar-demo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ecf5ff;
+    color: #409eff;
+  }
 }

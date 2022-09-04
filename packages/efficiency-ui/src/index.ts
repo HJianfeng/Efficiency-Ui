@@ -3,40 +3,37 @@ import EfficiencyUI from './entry';
 import './style/demo.scss';
 createApp({
   template: `
-    <ef-row justify="start" align="center" :gutter="10">
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
-   <ef-row justify="start" :gutter="10">
-   <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   <ef-col :span="6" :pull="2"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
-   <ef-row justify="end" :gutter="10">
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
-   <ef-row justify="around" :gutter="10">
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
-   <ef-row justify="between" :gutter="10">
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
-   <ef-row justify="evenly" :gutter="10">
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-      <ef-col :span="8"><div class="grid-content bg-purple" /></ef-col>
-   </ef-row>
+  <ef-button @click="add">Add Item</ef-button>
+  <ef-button @click="onDelete">Delete Item</ef-button>
+  <ef-scrollbar ref="scrollbarRef"  max-height="400px" always>
+    <div ref="innerRef">
+      <p v-for="item in count" :key="item" class="scrollbar-demo-item">
+        {{ item }}
+      </p>
+    </div>
+  </ef-scrollbar>
+  <ef-scrollbar always>
+    <div class="scrollbar-flex-content" >
+      <p v-for="item in count" :key="item" class="scrollbar-demo-item">
+        {{ item }}
+      </p>
+    </div>
+  </ef-scrollbar>
    `,
+  data() {
+    return {
+      count: 20
+    };
+  },
   methods: {
-    handelClick(e) {
-      console.log('button click:', e);
+    add() {
+      this.$refs.scrollbarRef.setScrollTop(200);
+    },
+    onDelete() {
+      this.count--;
+    },
+    scroll(e) {
+      console.log('scroll:', e);
     }
   }
 })

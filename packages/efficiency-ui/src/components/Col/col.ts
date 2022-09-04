@@ -1,11 +1,6 @@
-import type { ExtractPropTypes, PropType } from 'vue';
+import type { ExtractPropTypes } from 'vue';
 import type Col from './col.vue';
-
-export type Mutable<T> = { -readonly [P in keyof T]: T[P] };
-export const definePropType = <T>(val: any): PropType<T> => val;
-export const mutable = <T extends readonly any[] | Record<string, unknown>>(
-  val: T
-) => val as Mutable<typeof val>;
+import { definePropType, mutable } from '../../utils/index';
 
 export type ColSizeObject = {
   span?: number;

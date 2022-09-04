@@ -53,5 +53,8 @@
     "vitepress-theme-demoblock": "1.4.2",
     "vitest": "0.21.1",
     "vue": "3.2.37"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.1.1"
   }
 }

@@ -1,0 +1,98 @@
+.ef-scrollbar {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.ef-scrollbar {
+  --ef-scrollbar-opacity: 0.3;
+  --ef-scrollbar-bg-color: #909399;
+  --ef-scrollbar-hover-opacity: 0.5;
+  --ef-scrollbar-hover-bg-color: #909399;
+}
+.ef-scrollbar__wrap {
+  height: 100%;
+  overflow: auto;
+}
+.ef-scrollbar__wrap--hidden-default {
+  scrollbar-width: none;
+}
+.ef-scrollbar__bar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 4px;
+  &.is-horizontal {
+    height: 6px;
+    left: 2px;
+  }
+  &.is-horizontal>div {
+    height: 100%;
+  }
+  &.is-vertical {
+    width: 6px;
+    top: 2px;
+  }
+  &.is-vertical>div {
+    width: 100%;
+  }
+  .ef-scrollbar__thumb {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: var(--ef-scrollbar-bg-color,var(--ef-text-color-secondary));
+    transition: var(--ef-transition-duration) background-color;
+    opacity: var(--ef-scrollbar-opacity,.3);
+  }
+}
+
+
+.ef-scrollbar {
+	overflow: hidden;
+	position: relative;
+	height: 100%
+}
+
+.ef-scrollbar__wrap {
+	overflow: auto;
+	height: 100%
+}
+.ef-scrollbar__wrap:not(.ef-scrollbar__wrap--hidden-default) {
+	padding-bottom: 15px
+}
+.ef-scrollbar__wrap--hidden-default {
+  &::-webkit-scrollbar {
+    display: none
+  }
+}
+
+.ef-scrollbar__thumb {
+	position: relative;
+	display: block;
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	border-radius: inherit;
+	background-color: var(--ef-scrollbar-bg-color,var(--ef-text-color-secondary));
+	transition: var(--ef-transition-duration) background-color;
+	opacity: var(--ef-scrollbar-opacity,.3);
+  &:hover {
+    background-color: var(--ef-scrollbar-hover-bg-color,var(--ef-text-color-secondary));
+    opacity: var(--ef-scrollbar-hover-opacity,.5)
+  }
+}
+
+.ef-scrollbar-fade-enter-active {
+	transition: opacity 340ms ease-out
+}
+
+.ef-scrollbar-fade-leave-active {
+	transition: opacity 120ms ease-out
+}
+
+.ef-scrollbar-fade-enter-from,.ef-scrollbar-fade-leave-active {
+	opacity: 0
+}
