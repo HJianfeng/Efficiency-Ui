@@ -3,22 +3,12 @@ import EfficiencyUI from './entry';
 import './style/demo.scss';
 createApp({
   template: `
-  <ef-button @click="add">Add Item</ef-button>
-  <ef-button @click="onDelete">Delete Item</ef-button>
-  <ef-scrollbar ref="scrollbarRef"  max-height="400px" always>
-    <div ref="innerRef">
-      <p v-for="item in count" :key="item" class="scrollbar-demo-item">
-        {{ item }}
-      </p>
-    </div>
-  </ef-scrollbar>
-  <ef-scrollbar always>
-    <div class="scrollbar-flex-content" >
-      <p v-for="item in count" :key="item" class="scrollbar-demo-item">
-        {{ item }}
-      </p>
-    </div>
-  </ef-scrollbar>
+  <ef-link href="https://www.baidu.com" underline>链接</ef-link>
+  <ef-link href="https://www.baidu.com" type="primary">链接</ef-link>
+  <ef-link href="https://www.baidu.com" type="info" disabled>链接</ef-link>
+  <ef-link href="https://www.baidu.com" type="danger" disabled>链接</ef-link>
+  <ef-link href="https://www.baidu.com" type="warning" disabled>链接</ef-link>
+  <ef-link href="https://www.baidu.com" type="success">链接</ef-link>
    `,
   data() {
     return {

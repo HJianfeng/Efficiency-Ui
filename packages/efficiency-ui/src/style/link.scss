@@ -1,0 +1,27 @@
+$types:('primary','danger','warning','success', 'info', 'text');
+
+.ef-link {
+  color: #333;
+  outline: none;
+  text-decoration: none;
+  &:not(.ef-disabled):hover {
+    color: var(--color-hover-primary);
+  }
+  &:not(.ef-link__underline):hover  {
+    text-decoration: none;
+  }
+}
+.ef-link__underline {
+  text-decoration: underline;
+  &:not(.ef-disabled):hover {
+    text-decoration: underline;
+  }
+}
+@each $t in $types{
+  .ef-link--type-#{$t} {
+    color: var(--color-#{$t});
+    &:not(.ef-disabled):hover {
+      color: var(--color-hover-#{$t});
+    }
+  }
+}
