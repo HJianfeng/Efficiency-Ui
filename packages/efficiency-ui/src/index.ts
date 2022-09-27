@@ -3,19 +3,22 @@ import EfficiencyUI from './entry';
 import './style/demo.scss';
 createApp({
   template: `
-  <ef-link href="https://www.baidu.com" underline>链接</ef-link>
-  <ef-link href="https://www.baidu.com" type="primary">链接</ef-link>
-  <ef-link href="https://www.baidu.com" type="info" disabled>链接</ef-link>
-  <ef-link href="https://www.baidu.com" type="danger" disabled>链接</ef-link>
-  <ef-link href="https://www.baidu.com" type="warning" disabled>链接</ef-link>
-  <ef-link href="https://www.baidu.com" type="success">链接</ef-link>
+  <ef-input v-model="input" showPassword placeholder="Please input" />
+  <ef-input v-model="input" maxlength="10" showWordLimit clearable placeholder="Please input" />
+  <ef-input v-model="input" maxlength="10" showWordLimit type="textarea" placeholder="Please input" />
    `,
   data() {
     return {
-      count: 20
+      input: 20
     };
   },
   methods: {
+    formatter(value) {
+      return `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    },
+    parser(value) {
+      return value.replace(/\$\s?|(,*)/g, '');
+    },
     add() {
       this.$refs.scrollbarRef.setScrollTop(200);
     },

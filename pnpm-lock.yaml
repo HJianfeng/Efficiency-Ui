@@ -26,7 +26,9 @@ importers:
   packages/efficiency-ui:
     specifiers:
       '@iconify-json/ic': 1.1.4
+      '@iconify-json/ion': ^1.1.4
       '@iconify-json/line-md': ^1.1.14
+      '@iconify-json/ph': ^1.1.2
       '@types/fs-extra': ^9.0.13
       '@typescript-eslint/eslint-plugin': ^5.33.1
       '@typescript-eslint/parser': ^5.33.1
@@ -61,7 +63,9 @@ importers:
       '@vueuse/core': 9.1.1_vue@3.2.37
     devDependencies:
       '@iconify-json/ic': 1.1.4
+      '@iconify-json/ion': 1.1.4
       '@iconify-json/line-md': 1.1.14
+      '@iconify-json/ph': 1.1.2
       '@types/fs-extra': 9.0.13
       '@typescript-eslint/eslint-plugin': 5.34.0_euudt5oqhhodkyae5tf6wjmsda
       '@typescript-eslint/parser': 5.34.0_4rv7y5c6xz3vfxwhbrcxxi73bq
@@ -840,8 +844,20 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
+  /@iconify-json/ion/1.1.4:
+    resolution: {integrity: sha512-30sOiE7OIboJXCFqIUfyAcskE49pEUjPyQs2Pl35o4lBXKZ46Jy3RzD+atkWBVz6ftlvTk9jE/qFi2mZ+gk78g==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
   /@iconify-json/line-md/1.1.14:
     resolution: {integrity: sha512-lsO9trkjgfnj5NLlTlwPf4Z9uJ/LQ/LHOfX+2wWId+1bvgAG+dsjsQ9/+Ro5pL+BSR7aiKeXeBBAWvkMuboJ6g==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify-json/ph/1.1.2:
+    resolution: {integrity: sha512-NuTdtt/UmuxIHS4hfdyv3BP5JiWikNkr81hFHXDScXlH0GUMdRSY/B5T9vDvbXDY/esMLFnIAXoFVDLsGinhpw==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true

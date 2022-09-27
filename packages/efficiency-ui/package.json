@@ -23,7 +23,9 @@
   "license": "ISC",
   "devDependencies": {
     "@iconify-json/ic": "1.1.4",
+    "@iconify-json/ion": "^1.1.4",
     "@iconify-json/line-md": "^1.1.14",
+    "@iconify-json/ph": "^1.1.2",
     "@types/fs-extra": "^9.0.13",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",

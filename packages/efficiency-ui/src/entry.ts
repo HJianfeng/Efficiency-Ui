@@ -4,10 +4,11 @@ import { Row } from './components/Row';
 import { Col } from './components/Col';
 import { Scrollbar } from './components/Scrollbar';
 import { Link } from './components/Link';
+import { Input } from './components/Input';
 
-const componentList = [Button, Row, Col, Scrollbar, Link];
+const componentList = [Button, Row, Col, Scrollbar, Link, Input];
 // 导出单独组件
-export { Button, Row, Col, Scrollbar, Link };
+export { Button, Row, Col, Scrollbar, Link, Input };
 // 编写一个插件，实现一个install方法
 export default {
   install(app: App): void {

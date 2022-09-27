@@ -17,3 +17,7 @@ export const isNumber = (data) => {
 export const isObject = (data) => {
   return typeof data === 'object' && !Array.isArray(data);
 };
+
+export const isNil = (data) => {
+  return data === null || data === undefined;
+};
