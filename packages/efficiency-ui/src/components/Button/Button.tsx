@@ -81,11 +81,7 @@ export default defineComponent({
             ''
           )}
           {props.icon !== '' ? (
-            <i
-              class={`i-ic-baseline-${props.icon} p-2 ${
-                slots.default ? 'mr-1' : ''
-              }`}
-            ></i>
+            <i class={`${props.icon} ${slots.default ? 'mr-1' : ''}`}></i>
           ) : (
             ''
           )}

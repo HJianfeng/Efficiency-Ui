@@ -111,7 +111,7 @@ describe('round', () => {
         default: 'Button'
       },
       props: {
-        icon: 'edit'
+        icon: 'i-ic-baseline-edit'
       }
     });
 

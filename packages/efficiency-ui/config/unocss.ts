@@ -2,16 +2,18 @@ import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
 
 const icon = [
+  ...['search', 'edit', 'check', 'message', 'delete', 'add', 'share'].map(
+    (v) => `i-ic-baseline-${v}`
+  ),
   ...[
-    'search',
-    'edit',
-    'check',
-    'message',
-    'star-off',
-    'delete',
+    'ios-close-circle-outline',
+    'accessibility',
     'add',
-    'share'
-  ].map((v) => `i-ic-baseline-${v}`)
+    'add-circle',
+    'add-outline',
+    'airplane',
+    'airplane-outline'
+  ].map((v) => `i-ion-${v}`)
 ];
 const safelist = [
   ...['start', 'center', 'end', 'around', 'between', 'evenly'].map(

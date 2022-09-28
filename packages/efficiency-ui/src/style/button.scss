@@ -27,3 +27,7 @@ $types:('primary','danger','warning','success', 'info', 'text');
     }
   }
 }
+.ef-button-inner {
+  display: inline-flex;
+  align-items: center;
+}
