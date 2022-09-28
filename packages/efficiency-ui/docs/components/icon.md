@@ -10,7 +10,7 @@
     <i class="i-ic-baseline-edit"></i>
     <i class="i-ic-baseline-share"></i>
     <i class="i-ic-baseline-delete"></i>
-  <div>
+  </div>
 </template>
 ```
 <style>

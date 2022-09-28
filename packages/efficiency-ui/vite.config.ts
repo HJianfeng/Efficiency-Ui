@@ -25,13 +25,13 @@ export const config: any = {
     brotliSize: true,
     cssCodeSplit: true,
     lib: {
-      entry: './src/entry.ts',
+      entry: path.resolve(__dirname, './src/entry.ts'),
       name: 'EfficiencyUI',
       fileName: 'efficiency-ui',
       // 导出模块格式
       formats: ['esm', 'umd', 'iife']
     },
-    outDir: './dist'
+    outDir: path.resolve(__dirname, './dist')
   },
   test: {
     // enable jest-like global test APIs

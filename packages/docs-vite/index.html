@@ -14,18 +14,21 @@
 <div id="app"></div>
 <script type="module">
     import { createApp } from "vue/dist/vue.esm-bundler.js";
-    import { Button } from "efficiency-ui";
+    import EfficiencyUI, {Input} from "efficiency-ui";
     import "efficiency-ui/dist/style.css"
     createApp({
+        data: () => {
+          return {
+            count: '1'
+          }
+        },
         template: `
     <div style="margin-bottom:20px;">
-        <EFButton color="blue">主要按钮</EFButton>
-        <EFButton color="green">绿色按钮</EFButton>
-        <EFButton color="gray">灰色按钮</EFButton>
-        <EFButton color="yellow">黄色按钮</EFButton>
-        <EFButton color="red">红色按钮</EFButton>
+        <ef-button color="blue" icon="i-line-md-account-small">主要按钮</ef-button>
+        <ef-input v-model="count" showPassword />
+        <i class="i-line-md-account-remove" />
     </div>
-`}).component(Button.name, Button).mount('#app')
+`}).use(EfficiencyUI).mount('#app')
 
 </script>
 </body>

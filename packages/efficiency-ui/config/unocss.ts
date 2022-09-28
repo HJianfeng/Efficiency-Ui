@@ -1,20 +1,7 @@
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
+import IconList from './icon';
 
-const icon = [
-  ...['search', 'edit', 'check', 'message', 'delete', 'add', 'share'].map(
-    (v) => `i-ic-baseline-${v}`
-  ),
-  ...[
-    'ios-close-circle-outline',
-    'accessibility',
-    'add',
-    'add-circle',
-    'add-outline',
-    'airplane',
-    'airplane-outline'
-  ].map((v) => `i-ion-${v}`)
-];
 const safelist = [
   ...['start', 'center', 'end', 'around', 'between', 'evenly'].map(
     (i) => `justify-${i}`
@@ -27,7 +14,7 @@ const safelist = [
   ...Array.from({ length: 9 }, (_, i) => `opacity-${i}0`),
   ...Array.from({ length: 20 }, (_, i) => `text-${i + 12}px`),
   ...['rounded-full', 'rounded'],
-  ...icon
+  ...IconList
 ];
 export default () =>
   Unocss({
