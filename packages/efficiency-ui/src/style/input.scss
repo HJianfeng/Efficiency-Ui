@@ -7,6 +7,7 @@
   --ef-font-size-base: 14px;
   --ef-input-clear-hover-color: #909399;
   --el-text-color-placeholder: #a8abb2;
+  --el-fill-color-light: #f5f7fa;
 }
 .ef-input {
   --ef-input-height: 32px;
@@ -32,6 +33,18 @@
     }
     &.ef-input__focus {
       border-color: var(--ef-input-focus-border);
+    }
+  }
+  &.ef-input-group--append {
+    .ef-input__wrapper {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+  &.ef-input-group--prepend {
+    .ef-input__wrapper {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
     }
   }
   
@@ -127,4 +140,23 @@
       color: var(--ef-input-clear-hover-color);
     }
   }
+}
+%slot-append {
+  border-radius: var(--ef-input-border-radius);
+  border: 1px solid var(--ef-input-border-color);
+  background-color: var(--el-fill-color-light);
+  color: var(--ef-input-clear-hover-color);
+  padding: 0 20px;
+}
+.ef-input-append {
+  @extend %slot-append;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ef-input-prepend {
+  @extend %slot-append;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

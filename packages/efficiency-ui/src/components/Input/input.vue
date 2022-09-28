@@ -3,6 +3,10 @@
     class="ef-input"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
+    :class="{
+      'ef-input-group--prepend': $slots.prepend,
+      'ef-input-group--append': $slots.append
+    }"
   >
     <template v-if="type !== 'textarea'">
       <!-- prepend slot -->
@@ -39,17 +43,17 @@
               v-if="showPwdVisible"
               @click="handlePasswordVisible"
               :class="passwordIcon"
-              class="ml-8px cursor-pointer ef-input__icon"
+              class="ml-8px cursor-pointere ef-input__password ef-input__icon"
             />
             <i
               v-if="showClear"
               @click="clear"
-              class="ml-8px cursor-pointer ef-input__icon i-ion-ios-close-circle-outline"
+              class="ml-8px cursor-pointer ef-input__clear ef-input__icon i-ion-ios-close-circle-outline"
             />
             <span v-if="isWordLimitVisible" class="ef-input-count">
-              <span class="ef-input-count__inner">
-                {{ textLength }} / {{ attrs.maxlength }}
-              </span>
+              <span class="ef-input-count__inner"
+                >{{ textLength }} / {{ attrs.maxlength }}</span
+              >
             </span>
           </span>
         </span>
@@ -119,6 +123,7 @@ const isComposing = ref(false);
 
 const focused = ref(false);
 const hovering = ref(false);
+const countStyle = ref<StyleValue>();
 const textareaCalcStyle = shallowRef(props.inputStyle);
 const nativeInputValue = computed(() =>
   isNil(props.modelValue) ? '' : String(props.modelValue)
@@ -307,6 +312,8 @@ defineExpose({
   input,
   /** @description HTML textarea element */
   textarea,
+  /** @description style of textarea. */
+  textareaStyle,
   /** @description from props (used on unit test) */
   autosize: toRef(props, 'autosize'),
   /** @description HTML element, input or textarea */

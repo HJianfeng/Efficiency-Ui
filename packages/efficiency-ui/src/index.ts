@@ -3,13 +3,18 @@ import EfficiencyUI from './entry';
 import './style/demo.scss';
 createApp({
   template: `
-  <ef-input v-model="input" showPassword placeholder="Please input" />
-  <ef-input v-model="input" maxlength="10" showWordLimit clearable placeholder="Please input" />
-  <ef-input v-model="input" maxlength="10" showWordLimit type="textarea" placeholder="Please input" />
+      <ef-input v-model="input" >
+        <template #prepend>
+          <div>asas</div>
+        </template>
+        <template #append>
+          <div>asas</div>
+        </template>
+      </ef-input>
    `,
   data() {
     return {
-      input: 20
+      input: ''
     };
   },
   methods: {
@@ -20,7 +25,7 @@ createApp({
       return value.replace(/\$\s?|(,*)/g, '');
     },
     add() {
-      this.$refs.scrollbarRef.setScrollTop(200);
+      console.log(this.$refs.aaa);
     },
     onDelete() {
       this.count--;
