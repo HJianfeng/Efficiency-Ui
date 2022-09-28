@@ -122,17 +122,17 @@ describe('Input.vue', () => {
     });
   });
 
-  // test('suffixIcon', () => {
-  //   const wrapper = mount(() => <Input suffix-icon="time" />);
-  //   const icon = wrapper.find('.ef-input__icon');
-  //   expect(icon.exists()).toBe(true);
-  // });
+  test('suffixIcon', () => {
+    const wrapper = mount(() => <Input suffix-icon="i-ic-baseline-search" />);
+    const icon = wrapper.find('.i-ic-baseline-search');
+    expect(icon.exists()).toBe(true);
+  });
 
-  // test('prefixIcon', () => {
-  //   const wrapper = mount(() => <Input prefix-icon="time" />);
-  //   const icon = wrapper.find('.ef-input__icon');
-  //   expect(icon.exists()).toBe(true);
-  // });
+  test('prefixIcon', () => {
+    const wrapper = mount(() => <Input prefix-icon="i-ic-baseline-search" />);
+    const icon = wrapper.find('.i-ic-baseline-search');
+    expect(icon.exists()).toBe(true);
+  });
 
   // test('size', () => {
   //   const wrapper = mount(() => <Input size="large" />);

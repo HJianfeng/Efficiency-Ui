@@ -67,6 +67,14 @@ export const inputProps = {
   inputStyle: {
     type: [Object, Array, String] as PropType<StyleValue>,
     default: () => ({})
+  },
+  suffixIcon: {
+    type: String,
+    default: ''
+  },
+  prefixIcon: {
+    type: String,
+    default: ''
   }
 } as const;
 export type InputProps = ExtractPropTypes<typeof inputProps>;

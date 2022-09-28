@@ -3,11 +3,8 @@ import EfficiencyUI from './entry';
 import './style/demo.scss';
 createApp({
   template: `
-      <ef-input v-model="input" >
+      <ef-input v-model="input" prefixIcon="i-ic-baseline-search" suffix-icon="i-ic-baseline-search">
         <template #prepend>
-          <div>asas</div>
-        </template>
-        <template #append>
           <div>asas</div>
         </template>
       </ef-input>

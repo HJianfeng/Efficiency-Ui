@@ -39,7 +39,7 @@
     <ef-col :span="4"><div class="grid-content ep-bg-purple-light" /></ef-col>
   </ef-row>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .ef-row {
   margin-bottom: 20px;
 }

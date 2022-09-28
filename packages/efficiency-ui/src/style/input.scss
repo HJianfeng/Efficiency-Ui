@@ -141,6 +141,21 @@
     }
   }
 }
+.ef-input__prefix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  text-align: center;
+  pointer-events: none;
+  color: var(--el-text-color-placeholder);
+  .ef-input__icon {
+    color: var(--el-text-color-placeholder);
+    &:hover {
+      color: var(--ef-input-clear-hover-color);
+    }
+  }
+}
 %slot-append {
   border-radius: var(--ef-input-border-radius);
   border: 1px solid var(--ef-input-border-color);
