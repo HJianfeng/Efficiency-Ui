@@ -18,6 +18,7 @@ const sidebar = {
             { text: 'Layout 布局', link: '/components/layout' },
             { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
             { text: 'Link 链接', link: '/components/link' },
+            { text: 'Input 输入框', link: '/components/input' },
           ]
         }
       ]

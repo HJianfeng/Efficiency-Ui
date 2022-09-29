@@ -136,6 +136,7 @@
   }
   .ef-input__icon {
     color: var(--el-text-color-placeholder);
+    cursor: pointer;
     &:hover {
       color: var(--ef-input-clear-hover-color);
     }
@@ -174,4 +175,14 @@
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+.ef-input-disabled {
+  .ef-input__wrapper {
+    background-color: #f5f7fa !important;
+    border: 1px solid var(--ef-input-border-color) !important;
+  }
+  .ef-input__inner,.ef-textarea__inner {
+    color: #a8abb2;
+    cursor: not-allowed;
+  }
 }

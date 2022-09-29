@@ -4,16 +4,14 @@
 ## 完整引入
 在 main.js 中写入以下内容：
 ```js
-import Vue from 'vue';
-import EfficiencyUI from 'efficiency-ui';
-import 'efficiency-ui/dist/style.css';
+import { createApp } from 'vue'
 import App from './App.vue';
+import EfficiencyUI from 'efficiency-ui'
+import 'efficiency-ui/dist/style.css'
 
-Vue.use(EfficiencyUI);
+const app = createApp(App);
+app.use(EfficiencyUI);
+app.mount('#app');
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
-});
 ```
 样式文件需要单独引入。

@@ -5,7 +5,8 @@
     @mouseleave="handleMouseLeave"
     :class="{
       'ef-input-group--prepend': $slots.prepend,
-      'ef-input-group--append': $slots.append
+      'ef-input-group--append': $slots.append,
+      'ef-input-disabled': disabled
     }"
   >
     <template v-if="type !== 'textarea'">
