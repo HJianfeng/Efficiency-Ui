@@ -21,3 +21,11 @@ export const isObject = (data) => {
 export const isNil = (data) => {
   return data === null || data === undefined;
 };
+export const isUndefined = (data) => {
+  return data === undefined;
+};
+
+export const isElement = (e: unknown): e is Element => {
+  if (typeof Element === 'undefined') return false;
+  return e instanceof Element;
+};
