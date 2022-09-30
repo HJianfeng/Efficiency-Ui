@@ -19,6 +19,7 @@ const sidebar = {
             { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
             { text: 'Link 链接', link: '/components/link' },
             { text: 'Input 输入框', link: '/components/input' },
+            { text: 'InputNumber 数字输入框', link: '/components/input-number' },
           ]
         }
       ]
