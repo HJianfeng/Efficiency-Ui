@@ -238,9 +238,9 @@ const input2 = ref('')
 | prepend | 输入框前置内容，只对非 type="textarea" 有效 |
 | append  | 输入框后置内容，只对非 type="textarea" 有效 |
 
-#  Input Events
+# 事件
 
-| Name   | Description                                                                                           | Parameters                |
+| Name   | Description                                                                                           | 参数                |
 | ------ | ----------------------------------------------------------------------------------------------------- | ------------------------- |
 | blur   | 在 Input 失去焦点时触发 | (event: FocusEvent) | 
 | focus  | 在 Input 获得焦点时触发 | (event: FocusEvent) |
@@ -248,9 +248,9 @@ const input2 = ref('')
 | input  | 在 Input 值改变时触发 | (value: string \| number) |
 | clear  | 在点击由 clearable 属性生成的清空按钮时触发 | — |
 
-# Input Methods
+# 方法
 
-| Method | Description                      | Parameters |
+| Method | Description                      | 参数 |
 | ------ | -------------------------------- | ---------- |
 | focus  | 使 input 获取焦点 | — |
 | blur   | 使 input 失去焦点 | — |
