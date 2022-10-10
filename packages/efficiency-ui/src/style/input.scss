@@ -6,8 +6,8 @@
   --ef-input-border-radius: 4px;
   --ef-font-size-base: 14px;
   --ef-input-clear-hover-color: #909399;
-  --el-text-color-placeholder: #a8abb2;
-  --el-fill-color-light: #f5f7fa;
+  --ef-text-color-placeholder: #a8abb2;
+  --ef-fill-color-light: #f5f7fa;
 }
 .ef-input {
   --ef-input-height: 32px;
@@ -63,7 +63,7 @@
     background: 0 0;
     box-sizing: border-box;
     &::-webkit-input-placeholder {
-      color:var(--el-text-color-placeholder);
+      color:var(--ef-text-color-placeholder);
     }
     &:focus {
       outline: 0;
@@ -97,7 +97,7 @@
       box-shadow: 0 0 0 1px var(--el-input-focus-border-color) inset;
     }
     &::-webkit-input-placeholder {
-      color:var(--el-text-color-placeholder);
+      color:var(--ef-text-color-placeholder);
     }
   }
   .ef-input-count {
@@ -127,7 +127,7 @@
   flex-wrap: nowrap;
   text-align: center;
   pointer-events: none;
-  color: var(--el-text-color-placeholder);
+  color: var(--ef-text-color-placeholder);
   .ef-input__suffix-inner {
     pointer-events: all;
     display: inline-flex;
@@ -135,7 +135,7 @@
     justify-content: center;
   }
   .ef-input__icon {
-    color: var(--el-text-color-placeholder);
+    color: var(--ef-text-color-placeholder);
     cursor: pointer;
     &:hover {
       color: var(--ef-input-clear-hover-color);
@@ -149,9 +149,9 @@
   flex-wrap: nowrap;
   text-align: center;
   pointer-events: none;
-  color: var(--el-text-color-placeholder);
+  color: var(--ef-text-color-placeholder);
   .ef-input__icon {
-    color: var(--el-text-color-placeholder);
+    color: var(--ef-text-color-placeholder);
     &:hover {
       color: var(--ef-input-clear-hover-color);
     }
@@ -160,7 +160,7 @@
 %slot-append {
   border-radius: var(--ef-input-border-radius);
   border: 1px solid var(--ef-input-border-color);
-  background-color: var(--el-fill-color-light);
+  background-color: var(--ef-fill-color-light);
   color: var(--ef-input-clear-hover-color);
   padding: 0 20px;
 }

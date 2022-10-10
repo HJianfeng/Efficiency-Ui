@@ -134,11 +134,6 @@ describe('Input.vue', () => {
     expect(icon.exists()).toBe(true);
   });
 
-  // test('size', () => {
-  //   const wrapper = mount(() => <Input size="large" />);
-  //   expect(wrapper.classes('el-input--large')).toBe(true);
-  // });
-
   test('type', () => {
     const wrapper = mount(() => <Input type="textarea" />);
     expect(wrapper.classes('ef-input')).toBe(true);

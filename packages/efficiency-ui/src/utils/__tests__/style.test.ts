@@ -6,6 +6,9 @@ describe('addUnit', () => {
     const value = 12;
     expect(addUnit(value)).toBe('12px');
   });
+  it('empty', () => {
+    expect(addUnit()).toBe('');
+  });
   it('string', () => {
     const value = '12';
     expect(addUnit(value)).toBe('12');

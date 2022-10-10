@@ -6,7 +6,7 @@
     :class="{
       'ef-input-group--prepend': $slots.prepend,
       'ef-input-group--append': $slots.append,
-      'ef-input-disabled': disabled
+      'ef-input-disabled': inputDisabled
     }"
   >
     <template v-if="type !== 'textarea'">
@@ -23,7 +23,7 @@
           class="ef-input__inner"
           :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
           v-bind="attrs"
-          :disabled="disabled"
+          :disabled="inputDisabled"
           :readonly="readonly"
           :autocomplete="autocomplete"
           :placeholder="placeholder"
@@ -84,7 +84,7 @@
         v-bind="attrs"
         :style="textareaStyle"
         :tabindex="tabindex"
-        :disabled="disabled"
+        :disabled="inputDisabled"
         :readonly="readonly"
         :autocomplete="autocomplete"
         :aria-label="label"
@@ -123,6 +123,7 @@ import {
 import { inputEmits, inputProps } from './input';
 import { UPDATE_MODEL_EVENT } from '../../utils/const/event';
 import { isObject, isNil } from '../../utils';
+import { useDisabled } from '../../hooks';
 import { calcTextareaHeight } from './utils';
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
@@ -140,7 +141,7 @@ const textareaCalcStyle = shallowRef(props.inputStyle);
 const nativeInputValue = computed(() =>
   isNil(props.modelValue) ? '' : String(props.modelValue)
 );
-
+const inputDisabled = useDisabled();
 const instance = getCurrentInstance()!;
 const attrs = computed(() => {
   const arr = Object.entries(instance.proxy?.$attrs!).filter(
@@ -273,7 +274,7 @@ const handleMouseEnter = (evt: MouseEvent) => {
 const showClear = computed(
   () =>
     props.clearable &&
-    !props.disabled &&
+    !inputDisabled.value &&
     !props.readonly &&
     !!nativeInputValue.value &&
     (focused.value || hovering.value)
@@ -281,7 +282,7 @@ const showClear = computed(
 const showPwdVisible = computed(
   () =>
     props.showPassword &&
-    !props.disabled &&
+    !inputDisabled.value &&
     !props.readonly &&
     !!nativeInputValue.value &&
     (!!nativeInputValue.value || focused.value)
@@ -291,7 +292,7 @@ const isWordLimitVisible = computed(
     props.showWordLimit &&
     !!attrs.value['maxlength'] &&
     (props.type === 'text' || props.type === 'textarea') &&
-    !props.disabled &&
+    !inputDisabled.value &&
     !props.readonly &&
     !props.showPassword
 );
