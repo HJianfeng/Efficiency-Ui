@@ -20,6 +20,7 @@ const sidebar = {
             { text: 'Link 链接', link: '/components/link' },
             { text: 'Input 输入框', link: '/components/input' },
             { text: 'InputNumber 数字输入框', link: '/components/input-number' },
+            { text: 'Radio 单选框', link: '/components/radio' },
           ]
         }
       ]
