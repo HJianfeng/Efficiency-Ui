@@ -18,6 +18,9 @@ export const isObject = (data) => {
   return typeof data === 'object' && !Array.isArray(data);
 };
 
+export const isArray = (data) => {
+  return typeof data === 'object' && Array.isArray(data);
+};
 export const isNil = (data) => {
   return data === null || data === undefined;
 };
@@ -25,6 +28,9 @@ export const isUndefined = (data) => {
   return data === undefined;
 };
 
+export const isFunction = (data) => {
+  return data && typeof data === 'function';
+};
 export const isElement = (e: unknown): e is Element => {
   if (typeof Element === 'undefined') return false;
   return e instanceof Element;

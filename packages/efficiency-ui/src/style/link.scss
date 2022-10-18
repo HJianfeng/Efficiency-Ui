@@ -5,7 +5,7 @@ $types:('primary','danger','warning','success', 'info', 'text');
   outline: none;
   text-decoration: none;
   &:not(.ef-disabled):hover {
-    color: var(--color-hover-primary);
+    color: var(--ef-color-primary-light-3);
   }
   &:not(.ef-link__underline):hover  {
     text-decoration: none;
@@ -19,9 +19,9 @@ $types:('primary','danger','warning','success', 'info', 'text');
 }
 @each $t in $types{
   .ef-link--type-#{$t} {
-    color: var(--color-#{$t});
+    color: var(--ef-color-#{$t});
     &:not(.ef-disabled):hover {
-      color: var(--color-hover-#{$t});
+      color: var(--ef-color-#{$t}-light-3);
     }
   }
 }

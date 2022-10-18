@@ -7,8 +7,9 @@ import { Link } from './components/Link';
 import { Input } from './components/Input';
 import { InputNumber } from './components/InputNumber';
 import { Radio, RadioGroup, RadioButton } from './components/Radio';
+import { Form, FormItem } from './components/Form';
 
-const componentList = [
+const componentList = {
   Button,
   Row,
   Col,
@@ -18,8 +19,11 @@ const componentList = [
   InputNumber,
   Radio,
   RadioGroup,
-  RadioButton
-];
+  RadioButton,
+  Form,
+  FormItem
+};
+
 // 导出单独组件
 export {
   Button,
@@ -31,13 +35,16 @@ export {
   InputNumber,
   Radio,
   RadioGroup,
-  RadioButton
+  RadioButton,
+  Form,
+  FormItem
 };
 // 编写一个插件，实现一个install方法
 export default {
   install(app: App): void {
-    componentList.forEach((com) => {
+    for (const key in componentList) {
+      const com = componentList[key];
       app.component(com.name, com);
-    });
+    }
   }
 };

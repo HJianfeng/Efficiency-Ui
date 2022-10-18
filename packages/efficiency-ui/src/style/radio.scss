@@ -79,8 +79,8 @@
   }
   &.is-checked {
     .ef-radio__inner{
-      border-color: var(--color-primary);
-      background: var(--color-primary);
+      border-color: var(--ef-color-primary);
+      background: var(--ef-color-primary);
       &::after {
         transform: translate(-50%,-50%) scale(1);
       }
@@ -99,9 +99,9 @@
 }
 
 .ef-radio-button {
-  --ef-radio-button-checked-bg-color: var(--color-primary);
+  --ef-radio-button-checked-bg-color: var(--ef-color-primary);
   --ef-radio-button-checked-text-color: #fff;
-  --ef-radio-button-checked-border-color: var(--color-primary);
+  --ef-radio-button-checked-border-color: var(--ef-color-primary);
   --ef-radio-button-disabled-checked-fill: #f2f6fc;
 }
 
@@ -149,14 +149,14 @@
   }
   &:hover:not(.is-disabled,.is-active) {
     .ef-radio-button__inner {
-      color: var(--color-primary);
+      color: var(--ef-color-primary);
     }
   }
   &.is-active {
     .ef-radio-button__inner {
-      background-color: var(--color-primary);
+      background-color: var(--ef-color-primary);
       color: #fff;
-      border-color: var(--color-primary);
+      border-color: var(--ef-color-primary);
     }
   }
 

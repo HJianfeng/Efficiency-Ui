@@ -62,15 +62,16 @@
 </template>
 <script lang="ts" setup name="EfInputNumber">
 import { computed, onMounted, onUpdated, reactive, ref, watch } from 'vue';
-import { isNil, isNumber, isUndefined } from '../../utils';
+import { isNil, isNumber, isUndefined, debugWarn } from '../../utils';
 import { Input } from '../Input';
 import { RepeatClick as vRepeatClick } from '../../directives';
 import { inputNumberEmits, inputNumberProps } from './input-number';
 import type { InputInstance } from '../Input/input';
-
+import { useFormItem } from '../../hooks';
 const props = defineProps(inputNumberProps);
 const emit = defineEmits(inputNumberEmits);
 
+const { formItem } = useFormItem();
 const input = ref<InputInstance>();
 
 interface Data {
@@ -196,6 +197,9 @@ const setCurrentValue = (value: number | string | null | undefined) => {
   emit('update:modelValue', newVal!);
   emit('input', newVal);
   emit('change', newVal!, oldVal!);
+  if (props.validateEvent) {
+    formItem?.validate?.('change').catch((err) => debugWarn(err));
+  }
   data.currentValue = newVal;
 };
 const handleInput = (value: string) => {
@@ -223,6 +227,9 @@ const handleFocus = (event: MouseEvent | FocusEvent) => {
 
 const handleBlur = (event: MouseEvent | FocusEvent) => {
   emit('blur', event);
+  if (props.validateEvent) {
+    formItem?.validate?.('blur').catch((err) => debugWarn(err));
+  }
 };
 
 watch(

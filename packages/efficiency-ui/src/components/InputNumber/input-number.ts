@@ -43,6 +43,10 @@ export const inputNumberProps = {
     type: Number,
     validator: (val: number) =>
       val >= 0 && val === Number.parseInt(`${val}`, 10)
+  },
+  validateEvent: {
+    type: Boolean,
+    default: true
   }
 } as const;
 export type InputNumberProps = ExtractPropTypes<typeof inputNumberProps>;

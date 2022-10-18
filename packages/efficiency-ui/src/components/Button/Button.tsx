@@ -73,7 +73,12 @@ export default defineComponent({
       `border-1`
     ];
     return () => (
-      <button class={buttonClass} disabled={isDisabled} onClick={props.onClick}>
+      <button
+        class={buttonClass}
+        type="button"
+        disabled={isDisabled}
+        onClick={props.onClick}
+      >
         <div class="ef-button-inner">
           {props.loading ? (
             <i class={`i-line-md-loading-loop p-2 mr-1`}></i>

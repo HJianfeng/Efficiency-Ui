@@ -1,4 +1,26 @@
+
+
+@use 'mixins/mixins' as *;
+
 $types:('primary','danger','warning','success', 'info', 'text');
+.ef-button {
+  @each $t in $types{
+    @if($t != text) {
+      #{--color-#{$t}}: var(--ef-color-#{$t});
+      #{--color-hover-#{$t}}: var(--ef-color-#{$t}-light-3);
+    }
+  }
+  --ef-transition-duration: 0.3s;
+  --ef-transition-duration-fast: 0.2s;
+
+  --ef-font-size-base: 14px;
+  --ef-border-radius-base: 4px;
+
+  --ef-fill-color-light: #f5f7fa;
+  --ef-fill-color-lighter: #fafafa;
+  --ef-text-color-regular: #606266;
+}
+
 @each $t in $types{
   .ef-button--type-#{$t} {
     @if($t == info) {

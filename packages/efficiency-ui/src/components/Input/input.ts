@@ -75,6 +75,10 @@ export const inputProps = {
   prefixIcon: {
     type: String,
     default: ''
+  },
+  validateEvent: {
+    type: Boolean,
+    default: true
   }
 } as const;
 export type InputProps = ExtractPropTypes<typeof inputProps>;

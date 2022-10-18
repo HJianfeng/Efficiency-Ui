@@ -122,8 +122,8 @@ import {
 } from 'vue';
 import { inputEmits, inputProps } from './input';
 import { UPDATE_MODEL_EVENT } from '../../utils/const/event';
-import { isObject, isNil } from '../../utils';
-import { useDisabled } from '../../hooks';
+import { isObject, isNil, debugWarn } from '../../utils';
+import { useDisabled, useFormItem } from '../../hooks';
 import { calcTextareaHeight } from './utils';
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
@@ -141,6 +141,7 @@ const textareaCalcStyle = shallowRef(props.inputStyle);
 const nativeInputValue = computed(() =>
   isNil(props.modelValue) ? '' : String(props.modelValue)
 );
+const { formItem } = useFormItem();
 const inputDisabled = useDisabled();
 const instance = getCurrentInstance()!;
 const attrs = computed(() => {
@@ -256,6 +257,9 @@ const handleFocus = (event: FocusEvent) => {
 const handleBlur = (event: FocusEvent) => {
   focused.value = false;
   emit('blur', event);
+  if (props.validateEvent) {
+    formItem?.validate?.('blur').catch((err) => debugWarn(err));
+  }
 };
 const handleKeydown = (evt: KeyboardEvent) => {
   emit('keydown', evt);
@@ -313,6 +317,9 @@ watch(
   () => props.modelValue,
   () => {
     nextTick(() => resizeTextarea()); // 更新 textarea 高度
+    if (props.validateEvent) {
+      formItem?.validate?.('change').catch((err) => debugWarn(err));
+    }
   }
 );
 onMounted(async () => {
