@@ -38,6 +38,7 @@ importers:
       '@vue/eslint-config-prettier': ^7.0.0
       '@vue/test-utils': 2.0.2
       '@vueuse/core': ^9.1.1
+      async-validator: ^4.2.5
       babel-eslint: ^10.1.0
       c8: ^7.12.0
       eslint: ^8.22.0
@@ -48,6 +49,7 @@ importers:
       esno: ^0.16.3
       fs-extra: ^10.1.0
       happy-dom: 6.0.4
+      lodash: ^4.17.21
       prettier: ^2.7.1
       sass: ^1.54.5
       terser: 5.4.0
@@ -61,6 +63,8 @@ importers:
       vue: 3.2.37
     dependencies:
       '@vueuse/core': 9.1.1_vue@3.2.37
+      async-validator: 4.2.5
+      lodash: 4.17.21
     devDependencies:
       '@iconify-json/ic': 1.1.4
       '@iconify-json/ion': 1.1.4
@@ -1679,6 +1683,10 @@ packages:
   /assertion-error/1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
     dev: true
+
+  /async-validator/4.2.5:
+    resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==}
+    dev: false
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -3503,7 +3511,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
