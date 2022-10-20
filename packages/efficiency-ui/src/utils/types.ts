@@ -38,3 +38,7 @@ export const isElement = (e: unknown): e is Element => {
 export const isBoolean = (data) => {
   return typeof data === 'boolean';
 };
+
+export const isPromise = (obj) => {
+  return isObject(obj) && isFunction(obj.then) && isFunction(obj.catch);
+};
