@@ -6,7 +6,7 @@
       ns.is('disabled', switchDisabled),
       ns.is('checked', checked)
     ]"
-    :styles="styles"
+    :style="styles"
     @click.prevent="switchValue"
   >
     <input
@@ -21,6 +21,7 @@
       :false-value="inactiveValue"
       :disabled="switchDisabled"
       :name="name"
+      :tabindex="tabindex"
       @change="handleChange"
       @keydown.enter="switchValue"
     />

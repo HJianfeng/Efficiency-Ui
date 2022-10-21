@@ -5,8 +5,10 @@
 
   <div>
     <ef-switch
-      activeText="是"
-      inactiveText="否"
+      activeText="on"
+      inactiveText="off"
+      activeColor="#0f0"
+      inactiveColor="#f00"
       v-model="value2"
       class="ml-2"
       size="large"

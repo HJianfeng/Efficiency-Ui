@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "module": "./dist/efficiency-ui.esm.js",
-  "homepage": "https://efficiency-ui.vercel.app/",
+  "homepage": "https://github.com/HJianfeng/Efficiency-Ui",
   "scripts": {
     "dev": "vite",
     "build:all": "pnpm build:components",
