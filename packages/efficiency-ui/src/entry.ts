@@ -9,6 +9,7 @@ import { InputNumber } from './components/InputNumber';
 import { Radio, RadioGroup, RadioButton } from './components/Radio';
 import { Form, FormItem } from './components/Form';
 import { Switch } from './components/Switch';
+import { Tooltip } from './components/Tooltip';
 
 const componentList = {
   Button,
@@ -23,7 +24,8 @@ const componentList = {
   RadioButton,
   Form,
   FormItem,
-  Switch
+  Switch,
+  Tooltip
 };
 
 // 导出单独组件
@@ -40,7 +42,8 @@ export {
   RadioButton,
   Form,
   FormItem,
-  Switch
+  Switch,
+  Tooltip
 };
 // 编写一个插件，实现一个install方法
 export default {

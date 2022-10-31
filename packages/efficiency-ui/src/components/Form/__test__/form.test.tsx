@@ -63,7 +63,6 @@ describe('Form', () => {
     await nextTick();
 
     const formItems = wrapper.findAll<HTMLElement>('.ef-form-item__content');
-    console.log(formItems[0].element.style);
 
     const marginLeft = Number.parseInt(
       formItems[0].element.style.marginLeft,
