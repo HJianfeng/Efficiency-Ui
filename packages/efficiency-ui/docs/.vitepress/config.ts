@@ -9,27 +9,32 @@ const sidebar = {
       ]
     },
     {
-      text: '组件',
+      text: '基础',
       children: [
-        {
-          text: '基础组件',children: [
-            { text: 'Icon 图标', link: '/components/icon' },
-            { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Layout 布局', link: '/components/layout' },
-            { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
-            { text: 'Link 链接', link: '/components/link' },
-            { text: 'Input 输入框', link: '/components/input' },
-            { text: 'InputNumber 数字输入框', link: '/components/input-number' },
-            { text: 'Radio 单选框', link: '/components/radio' },
-            { text: 'Form 表单', link: '/components/form' },
-            { text: 'Switch 表单', link: '/components/switch' },
-          ]
-        }
+        { text: 'Icon 图标', link: '/components/icon' },
+        { text: 'Button 按钮', link: '/components/button' },
+        { text: 'Layout 布局', link: '/components/layout' },
+        { text: 'Scrollbar 滚动条', link: '/components/scrollbar' },
+        { text: 'Link 链接', link: '/components/link' },
       ]
     },
-    { text: '导航' },
+    { 
+      text: '输入',
+      children: [
+        { text: 'Form 表单', link: '/components/form' },
+        { text: 'Input 输入框', link: '/components/input' },
+        { text: 'InputNumber 数字输入框', link: '/components/input-number' },
+        { text: 'Radio 单选框', link: '/components/radio' },
+        { text: 'Switch 开关', link: '/components/switch' },
+      ] 
+    },
+    { 
+      text: '数据展示',
+      children: [
+        { text: 'Tooltip 文字提示', link: '/components/tooltip' },
+      ]
+    },
     { text: '反馈' },
-    { text: '数据录入' },
     { text: '数据展示' },
     { text: '布局' }
   ]
