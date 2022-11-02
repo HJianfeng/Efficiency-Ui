@@ -10,6 +10,7 @@ import { Radio, RadioGroup, RadioButton } from './components/Radio';
 import { Form, FormItem } from './components/Form';
 import { Switch } from './components/Switch';
 import { Tooltip } from './components/Tooltip';
+import { Checkbox, CheckboxGroup, CheckboxButton } from './components/Checkbox';
 
 const componentList = {
   Button,
@@ -25,7 +26,10 @@ const componentList = {
   Form,
   FormItem,
   Switch,
-  Tooltip
+  Tooltip,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton
 };
 
 // 导出单独组件
@@ -43,7 +47,10 @@ export {
   Form,
   FormItem,
   Switch,
-  Tooltip
+  Tooltip,
+  Checkbox,
+  CheckboxGroup,
+  CheckboxButton
 };
 // 编写一个插件，实现一个install方法
 export default {
