@@ -25,6 +25,7 @@ const sidebar = {
         { text: 'Input 输入框', link: '/components/input' },
         { text: 'InputNumber 数字输入框', link: '/components/input-number' },
         { text: 'Radio 单选框', link: '/components/radio' },
+        { text: 'Checkbox 单选框', link: '/components/checkbox' },
         { text: 'Switch 开关', link: '/components/switch' },
       ] 
     },
