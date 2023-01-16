@@ -15,7 +15,8 @@
         <slot name="prepend" />
       </div>
       <div class="ef-input__wrapper" :class="{ 'ef-input__focus': focused }">
-        <span v-if="prefixIcon" class="ef-input__prefix">
+        <span v-if="$slots.prefix || prefixIcon" class="ef-input__prefix">
+          <slot name="prefix" />
           <i :class="prefixIcon" class="mr-8px ef-input__icon" />
         </span>
         <input
@@ -42,10 +43,21 @@
           @keydown="handleKeydown"
         />
         <span
-          v-if="suffixIcon || showPwdVisible || showClear || isWordLimitVisible"
+          v-if="
+            $slots.suffix ||
+            suffixIcon ||
+            showPwdVisible ||
+            showClear ||
+            isWordLimitVisible
+          "
           class="ef-input__suffix"
         >
           <span class="ef-input__suffix-inner">
+            <template
+              v-if="!showClear || !showPwdVisible || !isWordLimitVisible"
+            >
+              <slot name="suffix" />
+            </template>
             <i
               v-if="suffixIcon"
               :class="suffixIcon"

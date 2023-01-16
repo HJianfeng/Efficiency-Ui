@@ -228,8 +228,10 @@
 
 @mixin inset-input-border($color, $important: false) {
   @if $important == true {
-    box-shadow: 0 0 0 1px $color inset !important;
+    border: 1px solid $color !important;
+    // box-shadow: 0 0 0 1px $color inset !important;
   } @else {
-    box-shadow: 0 0 0 1px $color inset;
+    // box-shadow: 0 0 0 1px $color inset;
+    border: 1px solid $color;
   }
 }

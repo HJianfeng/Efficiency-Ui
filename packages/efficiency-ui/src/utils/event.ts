@@ -6,7 +6,6 @@ export const composeEventHandlers = <E>(
 ) => {
   const handleEvent = (event: E) => {
     const shouldPrevent = theirsHandler?.(event);
-
     if (checkForDefaultPrevented === false || !shouldPrevent) {
       return oursHandler?.(event);
     }
