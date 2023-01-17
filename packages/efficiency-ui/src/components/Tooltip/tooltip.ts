@@ -50,6 +50,10 @@ export const useTooltipContentProps = {
   },
   disabled: {
     type: Boolean
+  },
+  arrowOffset: {
+    type: Number,
+    default: 5
   }
 } as const;
 

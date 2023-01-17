@@ -4,9 +4,7 @@
     @mouseleave="handleMouseLeave"
     :class="[
       type === 'textarea' ? nsTextarea.b() : nsInput.b(),
-      nsInput.m(inputSize),
       nsInput.is('disabled', inputDisabled),
-      nsInput.is('exceed', inputExceed),
       {
         [nsInput.b('group')]: $slots.prepend || $slots.append,
         [nsInput.bm('group', 'append')]: $slots.append,

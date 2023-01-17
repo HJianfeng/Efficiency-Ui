@@ -135,7 +135,6 @@ describe('Radio group', () => {
     const radio = ref(3);
     const data = ref(0);
     function onChange(val: number) {
-      console.log('change', val);
       data.value = val;
     }
     const wrapper = mount(() => (
@@ -231,7 +230,6 @@ describe('Radio Button', () => {
       </RadioGroup>
     ));
     const radio1 = wrapper.find('.ef-radio-button');
-    console.log(radio1.find('span').attributes('style'));
 
     expect(radio1.find('span').attributes('style')).toContain(
       'background-color: #000; border-color: #000; box-shadow: -1px 0 0 0 #000; color: #ff0;'
