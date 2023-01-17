@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "efficiency-ui": "workspace:^0.2.2",
     "vue": "3.2.37"
   }
 }

@@ -14,8 +14,6 @@
 <div id="app"></div>
 <script type="module">
     import { createApp } from "vue/dist/vue.esm-bundler.js";
-    import EfficiencyUI, {Input} from "efficiency-ui";
-    import "efficiency-ui/dist/style.css"
     createApp({
         data: () => {
           return {
@@ -24,9 +22,6 @@
         },
         template: `
     <div style="margin-bottom:20px;">
-        <ef-button color="blue" icon="i-line-md-account-small">主要按钮</ef-button>
-        <ef-input v-model="count" showPassword />
-        <i class="i-line-md-account-remove" />
     </div>
 `}).use(EfficiencyUI).mount('#app')
 
