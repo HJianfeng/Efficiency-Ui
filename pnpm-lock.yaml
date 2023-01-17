@@ -17,10 +17,8 @@ importers:
 
   packages/docs-vite:
     specifiers:
-      efficiency-ui: workspace:^0.2.2
       vue: 3.2.37
     dependencies:
-      efficiency-ui: link:../efficiency-ui
       vue: 3.2.37
 
   packages/efficiency-ui:
