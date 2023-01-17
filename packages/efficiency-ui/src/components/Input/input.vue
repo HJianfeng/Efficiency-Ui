@@ -1,17 +1,27 @@
 <template>
   <div
-    class="ef-input"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
-    :class="{
-      'ef-input-group--prepend': $slots.prepend,
-      'ef-input-group--append': $slots.append,
-      'ef-input-disabled': inputDisabled
-    }"
+    :class="[
+      type === 'textarea' ? nsTextarea.b() : nsInput.b(),
+      nsInput.m(inputSize),
+      nsInput.is('disabled', inputDisabled),
+      nsInput.is('exceed', inputExceed),
+      {
+        [nsInput.b('group')]: $slots.prepend || $slots.append,
+        [nsInput.bm('group', 'append')]: $slots.append,
+        [nsInput.bm('group', 'prepend')]: $slots.prepend,
+        [nsInput.m('prefix')]: $slots.prefix || prefixIcon,
+        [nsInput.m('suffix')]:
+          $slots.suffix || suffixIcon || clearable || showPassword,
+        [nsInput.bm('suffix', 'password-clear')]: showClear && showPwdVisible
+      },
+      $attrs.class
+    ]"
   >
     <template v-if="type !== 'textarea'">
       <!-- prepend slot -->
-      <div v-if="$slots.prepend" class="ef-input-prepend">
+      <div v-if="$slots.prepend" :class="nsInput.be('group', 'prepend')">
         <slot name="prepend" />
       </div>
       <div class="ef-input__wrapper" :class="{ 'ef-input__focus': focused }">
@@ -83,7 +93,7 @@
         </span>
       </div>
       <!-- append slot -->
-      <div v-if="$slots.append" class="ef-input-append">
+      <div v-if="$slots.append" :class="nsInput.be('group', 'append')">
         <slot name="append" />
       </div>
     </template>
@@ -113,7 +123,7 @@
       <span
         v-if="isWordLimitVisible"
         :style="countStyle"
-        class="ef-textarea__count"
+        :class="nsInput.e('count')"
       >
         {{ textLength }} / {{ attrs.maxlength }}
       </span>
@@ -135,9 +145,10 @@ import {
 import { inputEmits, inputProps } from './input';
 import { UPDATE_MODEL_EVENT } from '../../utils/const/event';
 import { isObject, isNil, debugWarn } from '../../utils';
-import { useDisabled, useFormItem } from '../../hooks';
+import { useDisabled, useFormItem, useNamespace } from '../../hooks';
 import { calcTextareaHeight } from './utils';
-
+const nsInput = useNamespace('input');
+const nsTextarea = useNamespace('textarea');
 type TargetElement = HTMLInputElement | HTMLTextAreaElement;
 const props = defineProps(inputProps);
 const input = shallowRef<HTMLInputElement>();

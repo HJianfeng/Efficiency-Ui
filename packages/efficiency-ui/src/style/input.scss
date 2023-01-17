@@ -70,7 +70,6 @@
       map.get($input, 'border-radius')
     );
     transition: getCssVar('transition-box-shadow');
-    border: none;
 
     &::placeholder {
       color: getCssVarWithDefault(
