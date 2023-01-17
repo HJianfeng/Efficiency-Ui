@@ -106,7 +106,7 @@ describe('Input.vue', () => {
       const nativeInput = inputElm.element;
       expect(nativeInput.value).toMatchInlineSnapshot(`"啊好😄"`);
 
-      const elCount = wrapper.find('.ef-textarea__count');
+      const elCount = wrapper.find('.ef-input__count');
       expect(elCount.exists()).toBe(true);
       expect(elCount.text()).toMatchInlineSnapshot(`"3 / 4"`);
 
@@ -116,7 +116,7 @@ describe('Input.vue', () => {
       expect(elCount.text()).toMatchInlineSnapshot(`"6 / 4"`);
       expect(Array.from(vm.$el.classList)).toMatchInlineSnapshot(`
         [
-          "ef-input",
+          "ef-textarea",
         ]
       `);
     });
@@ -136,7 +136,7 @@ describe('Input.vue', () => {
 
   test('type', () => {
     const wrapper = mount(() => <Input type="textarea" />);
-    expect(wrapper.classes('ef-input')).toBe(true);
+    expect(wrapper.classes('ef-textarea')).toBe(true);
   });
 
   test('rows', () => {
@@ -226,9 +226,9 @@ describe('Input.vue', () => {
     const inputElm3 = wrapper.vm.$el.querySelector('.test-password');
     const inputElm4 = wrapper.vm.$el.querySelector('.test-initial-exceed');
 
-    expect(inputElm1.querySelectorAll('.ef-input-count').length).toEqual(0);
-    expect(inputElm2.querySelectorAll('.ef-textarea__count').length).toEqual(1);
-    expect(inputElm3.querySelectorAll('.ef-input-count').length).toEqual(0);
+    expect(inputElm1.querySelectorAll('.ef-input__count').length).toEqual(0);
+    expect(inputElm2.querySelectorAll('.ef-input__count').length).toEqual(1);
+    expect(inputElm3.querySelectorAll('.ef-input__count').length).toEqual(0);
     expect(Array.from(inputElm4.classList)).toMatchInlineSnapshot(`
       [
         "ef-input",
